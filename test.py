@@ -1,5 +1,7 @@
 import numpy as np
 import cv2
+import sys
+import os
 from skvideo.io import VideoCapture
 #from cv2 import VideoCapture
 
@@ -49,7 +51,7 @@ def compute_lines(image):
     return image
 
 
-cap = VideoCapture("test.avi")
+cap = VideoCapture(sys.argv[1])
 
 while(cap.isOpened()):
     # Capture frame-by-frame
