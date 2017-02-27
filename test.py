@@ -1,9 +1,7 @@
 import numpy as np
 import cv2
-import sys
+from cv2 import VideoCapture
 import os
-from skvideo.io import VideoCapture
-#from cv2 import VideoCapture
 
 def compute_lines(image):
     gray = cv2.cvtColor(image,cv2.COLOR_RGB2GRAY)
@@ -58,7 +56,7 @@ while(cap.isOpened()):
     ret, frame = cap.read()
 
     # Our operations on the frame come here
-    frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+    #frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
     frame = compute_lines(frame)
 
     # Display the resulting frame
